@@ -220,6 +220,7 @@ __marimo__/
 # Generated evaluation artifacts and local platform metadata
 /logs/
 reports/
+output/
 /data/
 /pipeline/output/
 .DS_Store

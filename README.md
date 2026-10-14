@@ -1,6 +1,16 @@
-# SurakshaEval
+# SurakshaEval: An Indic Safety Benchmark for Multilingual LLMs
 
-[![Hugging Face Dataset Card](https://img.shields.io/badge/Hugging%20Face-Dataset%20Card-FFD21E?style=flat-square&labelColor=555555&logo=huggingface&logoColor=FFD21E)](https://huggingface.co/datasets/SurakshaAI/SurakshaEval) [![arXiv Paper](https://img.shields.io/badge/arXiv-2608.07862-B31B1B?style=flat-square&labelColor=555555&logo=arxiv&logoColor=B31B1B)](https://arxiv.org/abs/2608.07862) [![Published Paper](https://img.shields.io/badge/Published-AIES%202026-007EC6?style=flat-square&labelColor=555555&logo=doi&logoColor=FAB70C)](https://ojs.aaai.org/index.php/AIES/article/view/43143) [![Poster](https://img.shields.io/badge/Poster-PDF-6A5ACD?style=flat-square&labelColor=555555&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHBhdGggZmlsbD0iI0E3OEJGQSIgZD0iTTExIDFoMnYyaDh2MTVoLTZsNCA1aC0zbC00LTUtNCA1SDVsNC01SDNWM2g4eiIvPjxwYXRoIGZpbGw9IiNGRkYiIGQ9Ik01IDVoMTR2MTFINXoiLz48cGF0aCBmaWxsPSIjRjU5RTBCIiBkPSJNNyA3aDEwdjJIN3oiLz48cGF0aCBmaWxsPSIjMzhCREY4IiBkPSJNNyAxMWg0djNIN3oiLz48cGF0aCBmaWxsPSIjOEI1Q0Y2IiBkPSJNMTMgMTFoNHYxaC00em0wIDJoNHYxaC00eiIvPjwvc3ZnPg%3D%3D)](assets/SurakshaEval_AIES_2026_Poster.pdf) [![Project Page](https://img.shields.io/badge/Project-Page-007EC6?style=flat-square&labelColor=555555&logo=github&logoColor=8B5CF6)](https://debobanerjee.github.io/SurakshaEval-project)
+<p align="center">
+  <a href="https://huggingface.co/datasets/SurakshaAI/SurakshaEval"><img src="https://img.shields.io/badge/Hugging%20Face-Dataset%20Card-FFD21E?style=flat-square&amp;labelColor=555555&amp;logo=huggingface&amp;logoColor=FFD21E" alt="Hugging Face Dataset Card"></a>
+  <a href="https://arxiv.org/abs/2608.07862"><img src="https://img.shields.io/badge/arXiv-2608.07862-B31B1B?style=flat-square&amp;labelColor=555555&amp;logo=arxiv&amp;logoColor=B31B1B" alt="arXiv Paper"></a>
+  <a href="https://ojs.aaai.org/index.php/AIES/article/view/43143"><img src="https://img.shields.io/badge/Published-AIES%202026-007EC6?style=flat-square&amp;labelColor=555555&amp;logo=doi&amp;logoColor=FAB70C" alt="Published Paper"></a>
+  <a href="assets/SurakshaEval_AIES_2026_Poster.pdf"><img src="https://img.shields.io/badge/Poster-PDF-6A5ACD?style=flat-square&amp;labelColor=555555&amp;logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHBhdGggZmlsbD0iI0E3OEJGQSIgZD0iTTExIDFoMnYyaDh2MTVoLTZsNCA1aC0zbC00LTUtNCA1SDVsNC01SDNWM2g4eiIvPjxwYXRoIGZpbGw9IiNGRkYiIGQ9Ik01IDVoMTR2MTFINXoiLz48cGF0aCBmaWxsPSIjRjU5RTBCIiBkPSJNNyA3aDEwdjJIN3oiLz48cGF0aCBmaWxsPSIjMzhCREY4IiBkPSJNNyAxMWg0djNIN3oiLz48cGF0aCBmaWxsPSIjOEI1Q0Y2IiBkPSJNMTMgMTFoNHYxaC00em0wIDJoNHYxaC00eiIvPjwvc3ZnPg%3D%3D" alt="Poster"></a>
+  <a href="https://debobanerjee.github.io/SurakshaEval-project"><img src="https://img.shields.io/badge/Project-Page-007EC6?style=flat-square&amp;labelColor=555555&amp;logo=github&amp;logoColor=8B5CF6" alt="Project Page"></a>
+</p>
+
+<p align="center">
+  <img src="diagrams/summary_v2.png" alt="SurakshaEval summary diagram" width="300" />
+</p>
 
 SurakshaEval evaluates LLM safety across ten regional Indic languages and
 English. The pipeline downloads the dataset and checkpoints, deploys open-weight
@@ -11,6 +21,26 @@ The benchmark contains **1,484 English/Indic question pairs (2,968 prompts)**.
 Each pair contains an English question and its corresponding Indic question
 within the same regional context. Prompts may contain harmful or offensive
 content for evaluation of LLMs.
+
+## Contents
+
+- [Setup](#setup)
+- [Repository structure](#repository-structure)
+- [Skills](#skills)
+- [Evaluation configurations](#evaluation-configurations)
+- [Model deployment with vLLM](#model-deployment-with-vllm)
+- [Download the dataset and model checkpoints](#download-the-dataset-and-model-checkpoints)
+- [Generate model responses](#generate-model-responses)
+- [Judge questions and model responses](#judge-questions-and-model-responses)
+- [Check or cancel Batch jobs](#check-or-cancel-batch-jobs)
+- [Derive final safe/unsafe verdicts](#derive-final-safeunsafe-verdicts)
+- [Generate poster plots and tables](#generate-poster-plots-and-tables)
+- [Retry, logging and tests](#retry-logging-and-tests)
+- [Tool and reasoning parsers for safety experiments](#tool-and-reasoning-parsers-for-safety-experiments)
+- [Per-model custom chat templates](#per-model-custom-chat-templates)
+- [Hosted API access for open-weight models](#hosted-api-access-for-open-weight-models)
+- [License](#license)
+- [Citation](#citation)
 
 ## Setup
 
@@ -132,6 +162,8 @@ SurakshaEval/
 │   ├── test_environment.py
 │   ├── test_safety_audit_report.py
 │   └── test_safety_dashboard.py
+├── diagrams/
+│   └── summary_v2.png
 └── assets/
 ```
 
