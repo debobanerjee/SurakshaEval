@@ -1,0 +1,59 @@
+input_dir: data
+
+output_dir: output
+
+regions:
+  - "assamese"
+  - "bengali"
+  - "gujarati"
+  - "hindi"
+  - "kannada"
+  - "malayalam"
+  - "marathi"
+  - "punjabi"
+  - "tamil"
+  - "telugu"
+
+language_codes:
+  "assamese": "in-as"
+  "bengali": "in-bn"
+  "gujarati": "in-gu"
+  "hindi": "in-hi"
+  "kannada": "in-kn"
+  "malayalam": "in-ml"
+  "marathi": "in-mr"
+  "punjabi": "in-pa"
+  "tamil": "in-ta"
+  "telugu": "in-te"
+  "english": "en"
+
+risk_area2id:
+  "Assamese-specific": 0
+  "Bengali-specific": 1
+  "Gujarati-specific": 2
+  "Hindi-specific": 3
+  "Kannada-specific": 4
+  "Malayalam-specific": 5
+  "Marathi-specific": 6
+  "Punjabi-specific": 7
+  "Tamil-specific": 8
+  "Telugu-specific": 9
+
+type_of_harm2id:
+  "Generic": 1
+  "Regional and racial issues": 2 
+  "Politically sensitive topics": 3
+  "Legal and human rights matters": 4
+  "Controversial events/topics": 5
+  "Societal and cultural concerns": 6
+  "Specific-individuals": 7
+  "Adult Content": 8
+
+harm_shortform:
+  "Regional and racial issues": "RR"
+  "Politically sensitive topics": "PS"
+  "Legal and human rights matters": "LH"
+  "Controversial events/topics": "CE"
+  "Societal and cultural concerns": "SC"
+  "Specific-individuals": "SI"
+  "Adult Content": "AC"

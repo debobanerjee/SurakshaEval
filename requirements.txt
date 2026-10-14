@@ -1,0 +1,24 @@
+# Full deployment, response-generation and judging environment.
+# Use a compatible Linux GPU host for vLLM; its dependencies manage the
+# compatible PyTorch, Transformers and tokenizer/kernel package versions.
+
+# Model deployment
+vllm==0.31.0
+torch
+transformers
+
+# Asynchronous response generation and shared configuration
+httpx>=0.27,<1
+PyYAML>=6.0,<7
+huggingface-hub>=0.24,<2
+
+# Question/model-response judging, prompt preparation and result analysis
+openai
+requests
+python-dotenv>=1.0,<2
+tqdm
+pandas
+
+# Safety audit plots and tables
+matplotlib
+numpy

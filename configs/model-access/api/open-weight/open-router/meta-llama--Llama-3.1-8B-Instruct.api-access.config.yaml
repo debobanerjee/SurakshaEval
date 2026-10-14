@@ -1,0 +1,14 @@
+# Access mapping only; generation sampling and n_turns remain in the inference profile.
+# Keys are resolved from the environment/.env; disabled entries have no endpoint model ID.
+provider: openrouter
+eval-model: meta-llama/Llama-3.1-8B-Instruct
+enabled: true
+model: meta-llama/llama-3.1-8b-instruct
+base-url: https://openrouter.ai/api/v1
+api-key-env: OPENROUTER_API_KEY
+availability: catalog-listed
+checked-on: '2026-10-14'
+source: https://openrouter.ai/api/v1/models
+provider-hf-model: meta-llama/Meta-Llama-3.1-8B-Instruct
+notes: The catalog uses the historical Meta-Llama-3.1 Hugging Face name for this publisher
+  checkpoint. Live provider access is untested.

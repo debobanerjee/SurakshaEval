@@ -1,0 +1,27 @@
+# Native vLLM serve config for Sarvam-M-24B.
+# Starting hardware assumption: 2 x 80GB GPUs (A100/H100 class).
+# Context length and concurrency affect memory use; tune for your workload.
+model: sarvamai/sarvam-m
+served-model-name:
+- sarvamai/sarvam-m
+host: 127.0.0.1
+# Authentication key is read from VLLM_API_KEY; never store the secret here.
+api-key: null
+port: 8823
+tensor-parallel-size: 2
+tokenizer-mode: auto
+config-format: auto
+load-format: auto
+dtype: bfloat16
+gpu-memory-utilization: 0.95
+max-num-seqs: 256
+block-size: 256
+seed: 42
+max-model-len: 8192
+generation-config: vllm
+
+# Model card: https://huggingface.co/sarvamai/sarvam-m
+# Parser decision and recipe sources: docs/parser_audit.md
+# No reasoning-parser: <think> and </think> are multi-token strings;
+# built-in DeepSeek R1 parser requires atomic tokenizer marker IDs.
+# Preserve raw thinking output until a compatible parser/plugin is validated.

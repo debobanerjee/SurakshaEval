@@ -1,0 +1,13 @@
+# Access mapping only; generation sampling and n_turns remain in the inference profile.
+# Keys are resolved from the environment/.env; disabled entries have no endpoint model ID.
+provider: fireworks
+eval-model: sarvamai/sarvam-m
+enabled: false
+model: null
+base-url: https://api.fireworks.ai/inference/v1
+api-key-env: FIREWORKS_API_KEY
+availability: not-verified
+checked-on: '2026-10-14'
+source: https://fireworks.ai/models
+notes: No exact checkpoint mapping verified. Configure only after confirming the exact
+  model/provider endpoint; do not substitute a similarly named base model or fine-tune.

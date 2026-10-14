@@ -1,0 +1,27 @@
+eval_models:
+  "GenVRadmin/AryaBhatta-GemmaUltra-Merged":
+    n_turns: 1
+    "short_name": "GemmaUltra-8.5B"
+    "sampling_params":
+      "temperature": 0.6
+      "top_p": 0.9
+      "max_tokens": 4096
+    "prompt_format": custom_chat_template
+    # Custom prompt template is now in:
+    # configs/custom_chat_templates/GenVRadmin--AryaBhatta-GemmaUltra-Merged.chat_template.jinja
+    # "prompt_template":
+    #   system_prompt_template: "\n### Instruction:\n{system_prompt}\n"
+    #   user_prompt_template: "\n### Input:\n{question}\n\n### Response:\n"
+    "system_prompts":
+      default:
+        empty: ""
+    "supported_languages":
+    - in-bn
+    - in-gu
+    - in-hi
+    - in-kn
+    - in-ml
+    - in-pa
+    - in-ta
+    - in-te
+    - en

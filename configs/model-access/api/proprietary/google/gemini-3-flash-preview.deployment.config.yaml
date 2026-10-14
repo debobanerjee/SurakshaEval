@@ -1,0 +1,4 @@
+# Provider-hosted model: use the Gemini API, not vllm serve.
+provider: google_gemini
+model: gemini-3-flash-preview
+api-key-env: GEMINI_API_KEY

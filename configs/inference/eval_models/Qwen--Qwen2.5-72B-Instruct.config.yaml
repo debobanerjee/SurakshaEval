@@ -1,0 +1,16 @@
+eval_models:
+  "Qwen/Qwen2.5-72B-Instruct":
+    n_turns: 1
+    "short_name": "Qwen-2.5-72B-Inst"
+    "sampling_params":
+      "temperature": 0.6
+      "top_p": 0.9
+      "max_tokens": 4096
+    "prompt_format": chat_template
+    "system_prompts":
+      default:
+        empty: ""
+    "supported_languages":
+      - in-bn
+      - in-hi
+      - en

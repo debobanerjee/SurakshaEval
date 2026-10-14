@@ -1,0 +1,6 @@
+safety_question_evaluation:
+  models: 
+    "gpt-4.1-mini-2025-04-14":
+      "temperature": 0.6
+      "top_p": 0.9
+      "n": 1

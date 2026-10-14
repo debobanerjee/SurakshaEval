@@ -1,0 +1,22 @@
+eval_models:
+  "ai4bharat/Airavata":
+    n_turns: 1
+    "short_name": "Airavata-7B"
+    "sampling_params":
+      "temperature": 0.6
+      "top_p": 0.9
+      "max_tokens": 4096
+    "prompt_format": custom_chat_template
+    # Custom prompt template is now in:
+    # configs/custom_chat_templates/ai4bharat--Airavata.chat_template.jinja
+    # "prompt_template":
+    #   system_prompt_template: "<|system|>\n{system_prompt}\n"
+    #   user_prompt_template: "<|user|>\n{question}\n<|assistant|>\n"
+    #   bos: "<s>"
+    #   eos: "</s>"
+    "system_prompts":
+      default:
+        empty: ""
+    "supported_languages":
+      - in-hi
+      - en

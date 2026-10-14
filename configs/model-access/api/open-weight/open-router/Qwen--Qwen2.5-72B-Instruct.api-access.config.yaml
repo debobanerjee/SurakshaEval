@@ -1,0 +1,11 @@
+# Access mapping only; generation sampling and n_turns remain in the inference profile.
+# Keys are resolved from the environment/.env; disabled entries have no endpoint model ID.
+provider: openrouter
+eval-model: Qwen/Qwen2.5-72B-Instruct
+enabled: true
+model: qwen/qwen-2.5-72b-instruct
+base-url: https://openrouter.ai/api/v1
+api-key-env: OPENROUTER_API_KEY
+availability: catalog-listed
+checked-on: '2026-10-14'
+source: https://openrouter.ai/api/v1/models

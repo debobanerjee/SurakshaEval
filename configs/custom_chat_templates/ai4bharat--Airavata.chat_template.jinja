@@ -1,0 +1,12 @@
+{# Single-turn text safety template; mirrors the model's eval prompt format. #}
+{%- if tools is defined and tools %}{{- raise_exception('This checkpoint has no verified tool template.') }}{%- endif %}
+{%- if messages | length not in [1, 2] %}{{- raise_exception('Expected one user message with an optional system message.') }}{%- endif %}
+{%- if messages | length == 2 and messages[0]['role'] != 'system' %}{{- raise_exception('The first message must be system.') }}{%- endif %}
+{%- if messages[-1]['role'] != 'user' or messages[-1]['content'] is not string %}{{- raise_exception('Expected a text user message.') }}{%- endif %}
+{{- "<s>" }}
+{%- if messages | length == 2 and messages[0]['content'] %}
+{%- if messages[0]['content'] is not string %}{{- raise_exception('Expected text system content.') }}{%- endif %}
+{{- "<|system|>\n" ~ messages[0]['content'] ~ "\n" }}
+{%- endif %}
+{{- "<|user|>\n" ~ messages[-1]['content'] }}
+{%- if add_generation_prompt %}{{- "\n<|assistant|>\n" }}{%- endif %}

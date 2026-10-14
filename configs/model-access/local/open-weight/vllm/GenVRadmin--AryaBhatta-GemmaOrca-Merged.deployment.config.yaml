@@ -1,0 +1,28 @@
+# Native vLLM serve config for GemmaOrca-8.5B.
+# Starting hardware assumption: 1 x 80GB GPUs (A100/H100 class).
+# For 40GB GPUs, set tensor-parallel-size to 2.
+# Context length and concurrency affect memory use; tune for your workload.
+model: GenVRadmin/AryaBhatta-GemmaOrca-Merged
+served-model-name:
+- GenVRadmin/AryaBhatta-GemmaOrca-Merged
+host: 127.0.0.1
+# Authentication key is read from VLLM_API_KEY; never store the secret here.
+api-key: null
+port: 8805
+tensor-parallel-size: 1
+tokenizer-mode: auto
+config-format: auto
+load-format: auto
+dtype: bfloat16
+gpu-memory-utilization: 0.95
+max-num-seqs: 256
+block-size: 256
+seed: 42
+max-model-len: 8192
+generation-config: vllm
+
+
+# Model card: https://huggingface.co/GenVRadmin/AryaBhatta-GemmaOrca-Merged
+# Parser decision and recipe sources: docs/parser_audit.md
+# Tool/reasoning parser omitted: no verified exact-checkpoint format mapping.
+chat-template: configs/custom_chat_templates/GenVRadmin--AryaBhatta-GemmaOrca-Merged.chat_template.jinja

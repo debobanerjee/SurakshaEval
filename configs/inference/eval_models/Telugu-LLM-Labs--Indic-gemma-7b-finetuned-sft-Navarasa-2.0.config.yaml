@@ -1,0 +1,29 @@
+eval_models:
+  "Telugu-LLM-Labs/Indic-gemma-7b-finetuned-sft-Navarasa-2.0":
+    n_turns: 1
+    "short_name": "Indic-Gemma-7B"
+    "sampling_params":
+      "temperature": 0.6
+      "top_p": 0.9
+      "max_tokens": 4096
+    "prompt_format": custom_chat_template
+    # Custom prompt template is now in:
+    # configs/custom_chat_templates/Telugu-LLM-Labs--Indic-gemma-7b-finetuned-sft-Navarasa-2.0.chat_template.jinja
+    # "prompt_template":
+    #   system_prompt_template: "\n### Instruction:\n{system_prompt}\n"
+    #   user_prompt_template: "\n### Input:\n{question}\n\n### Response:\n"
+    "system_prompts":
+      default:
+        empty: ""
+    "supported_languages":
+      - in-as
+      - in-bn
+      - in-gu
+      - in-hi
+      - in-kn
+      - in-ml
+      - in-mr
+      - in-pa
+      - in-ta
+      - in-te
+      - en

@@ -216,3 +216,15 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Generated evaluation artifacts and local platform metadata
+/logs/
+reports/
+/data/
+/pipeline/output/
+.DS_Store
+
+# Local checkpoint snapshots (use checkpoints/ as the default destination)
+/checkpoints/
+*.safetensors
+*.bin

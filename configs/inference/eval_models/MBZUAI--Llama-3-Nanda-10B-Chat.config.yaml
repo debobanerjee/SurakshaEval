@@ -1,0 +1,17 @@
+eval_models:
+  "MBZUAI/Llama-3-Nanda-10B-Chat":
+    n_turns: 1
+    "short_name": "Nanda-10B"
+    "sampling_params":
+      "temperature": 0.6
+      "top_p": 0.9
+      "max_tokens": 4096
+    "prompt_format": chat_template
+    "system_prompts":
+      default:
+        nanda-basic: "You are a helpful AI assistant that is proficient in both Hindi (i.e., Devanagari Hindi and Romanized Hindi) and English. Respond in the same language and script as the instruction, unless a different language and script is explicitly requested."
+      ablations:
+        empty: ""
+    "supported_languages":
+      - in-hi
+      - en

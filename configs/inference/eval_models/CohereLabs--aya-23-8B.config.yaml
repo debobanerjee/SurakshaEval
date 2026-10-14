@@ -1,0 +1,15 @@
+eval_models:
+  "CohereLabs/aya-23-8B":
+    n_turns: 1
+    "short_name": "Aya-23-8B"
+    "sampling_params":
+      "temperature": 0.6
+      "top_p": 0.9
+      "max_tokens": 4096
+    "prompt_format": chat_template
+    "system_prompts":
+      default:
+        empty: ""
+    "supported_languages":
+      - in-hi
+      - en

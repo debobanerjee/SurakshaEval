@@ -1,0 +1,14 @@
+# Access mapping only; generation sampling and n_turns remain in the inference profile.
+# Keys are resolved from the environment/.env; disabled entries have no endpoint model ID.
+provider: fireworks
+eval-model: google/gemma-3-4b-it
+enabled: true
+model: accounts/fireworks/models/gemma-3-4b-it
+base-url: https://api.fireworks.ai/inference/v1
+api-key-env: FIREWORKS_API_KEY
+availability: catalog-listed
+checked-on: '2026-10-14'
+source: https://fireworks.ai/models/fireworks/gemma-3-4b-it
+deployment-type: on-demand
+notes: Catalog model ID verified; activate an account deployment and replace model
+  with its inference ID when required. Live account access is untested.

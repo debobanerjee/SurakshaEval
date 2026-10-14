@@ -1,0 +1,20 @@
+eval_models:
+  "BhabhaAI/Gajendra-v0.1":
+    n_turns: 1
+    "short_name": "Gajendra-v0.1-7B"
+    "sampling_params":
+      "temperature": 0.6
+      "top_p": 0.9
+      "max_tokens": 4096
+    "prompt_format": custom_chat_template
+    # Custom prompt template is now in:
+    # configs/custom_chat_templates/BhabhaAI--Gajendra-v0.1.chat_template.jinja
+    # "prompt_template":
+    #   system_prompt_template: "<|im_start|>system\n{system_prompt}<|im_end|>\n"
+    #   user_prompt_template: "<|im_start|>user\n{question}<|im_end|>\n<|im_start|>assistant"
+    "system_prompts":
+      default:
+        empty: ""
+    "supported_languages":
+      - in-hi
+      - en
